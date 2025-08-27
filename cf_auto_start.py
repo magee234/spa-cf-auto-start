@@ -10,11 +10,11 @@ def get_config():
     return [
         {
             "username": os.getenv('CF_USERNAME'),
-            "password": os.getenv('CF_PASSWORD', ''),
+            "password": os.getenv('CF_PASSWORD'),
             "api_endpoint": os.getenv('CF_API_ENDPOINT'),
-            "org": os.getenv('CF_ORG', ''),
+            "org": os.getenv('CF_ORG'),
             "space": os.getenv('CF_SPACE', 'dev'),
-            "apps": [app.strip() for app in os.getenv('CF_APPS', '').split(',') if app.strip()]
+            "apps": [app.strip() for app in os.getenv('CF_APPS').split(',') if app.strip()]
         }
     ]
 
